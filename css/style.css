@@ -1,0 +1,122 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #8ace00;
+  font-family: "Great Vibes", sans-serif;
+  overflow: hidden; /* Se asegura que no haya scroll */
+  position: relative;
+}
+
+/* Asegura que el iframe no sea visible ni ocupe espacio */
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none; /* Desactiva la interacción con el iframe */
+}
+
+.center-name {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 10vw;
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+  text-align: center;
+  animation: fadeInMove 6s ease-in-out infinite alternate;
+  max-width: 90vw; /* Asegura que no se desborde en pantallas grandes */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
+    0 0 25px rgba(255, 255, 255, 0.7), 0 0 35px rgba(255, 255, 255, 0.6); /* Blanco brillante */
+}
+
+/* Animación de desvanecimiento y movimiento */
+@keyframes fadeInMove {
+  0% {
+    opacity: 0.5;
+    transform: translateY(-20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(20px);
+  }
+}
+
+/* Corazones */
+.hearts-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: visible; /* Permite que los corazones se salgan del contenedor */
+}
+
+/* Corazones: Solo latir */
+.heart {
+  width: 1px; /* Tamaño base */
+  height: 1px;
+  background-image: url("../images/heart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  animation: pulse 10s infinite cubic-bezier(0.25, 0.8, 0.25, 1);
+  --rotate: 0deg; /* Variable personalizada para la rotación */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .heart {
+    width: 80px;
+    height: 80px;
+  }
+  .center-name {
+    font-size: 8vw;
+    max-width: 85vw; /* Ajuste del tamaño en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .heart {
+    width: 60px;
+    height: 60px;
+  }
+  .center-name {
+    font-size: 6vw;
+    max-width: 80vw; /* Ajuste del tamaño en pantallas más pequeñas */
+  }
+}
+
+/* Animación: Desalineado y estético */
+@keyframes pulse {
+  0% {
+    transform: scale(0.5) rotate(0deg) translate(0, 0);
+  }
+  25% {
+    transform: scale(1.2) rotate(var(--rotate)) translate(-20px, -20px);
+  }
+  50% {
+    transform: scale(0.8) rotate(var(--rotate)) translate(20px, 20px);
+  }
+  75% {
+    transform: scale(1.4) rotate(var(--rotate)) translate(-30px, 30px);
+  }
+  100% {
+    transform: scale(1) rotate(0deg) translate(0, 0);
+  }
+}
