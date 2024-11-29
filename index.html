@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <link rel="shortcut icon" href="images/brat.png" type="image/x-icon" />
     <!-- Fuente -->
     <link
@@ -16,13 +17,14 @@
   </head>
 
   <body>
-    <!-- Texto -->
-    <div class="center-name">I love you, Cam</div>
+    <!-- Texto (ahora será el botón de reproducción) -->
+    <div class="center-name" id="playButton">I love you, Cam</div>
+
     <!-- Contenedor de los corazones -->
     <div class="hearts-container"></div>
 
-    <!-- Reproductor de audio (auto reproducción) -->
-    <audio autoplay loop>
+    <!-- Reproductor de audio (sin autoplay, y oculto) -->
+    <audio id="audioPlayer" loop>
         <source src="audio/song.mp3" type="audio/mpeg" />
     </audio>
 

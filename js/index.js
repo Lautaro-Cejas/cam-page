@@ -1,13 +1,18 @@
+document.getElementById("playButton").addEventListener("click", function () {
+  var audio = document.getElementById("audioPlayer");
+  audio.play(); // Reproduce el audio al hacer clic en el texto
+});
+
 const heartsContainer = document.querySelector(".hearts-container");
 const centerName = document.querySelector(".center-name");
 
 // Número de corazones
-const totalHearts = 250; // Aumenté el número de corazones para que se vean más
+const totalHearts = 100; // Aumenté el número de corazones para que se vean más
 
 // Función para ajustar el tamaño de los corazones
 function adjustHeartSize() {
   const width = window.innerWidth;
-  const heartSize = Math.min(width * 0.08, 150); // Ajusta el tamaño con un máximo de 150px
+  const heartSize = Math.min(width * 0.05, 80); // Ajusta el tamaño con un máximo de 100px
   document.querySelectorAll(".heart").forEach((heart) => {
     heart.style.width = `${heartSize}px`;
     heart.style.height = `${heartSize}px`;

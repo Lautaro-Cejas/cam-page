@@ -79,7 +79,7 @@ audio {
     height: 80px;
   }
   .center-name {
-    font-size: 8vw;
+    font-size: 12vw;
     max-width: 85vw; /* Ajuste del tamaño en pantallas más pequeñas */
   }
 }
@@ -90,7 +90,7 @@ audio {
     height: 60px;
   }
   .center-name {
-    font-size: 6vw;
+    font-size: 14vw;
     max-width: 80vw; /* Ajuste del tamaño en pantallas más pequeñas */
   }
 }
