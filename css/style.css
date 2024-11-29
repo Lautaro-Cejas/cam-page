@@ -13,15 +13,8 @@ body {
   position: relative;
 }
 
-/* Asegura que el iframe no sea visible ni ocupe espacio */
-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  pointer-events: none; /* Desactiva la interacción con el iframe */
+audio {
+  display: none;
 }
 
 .center-name {
